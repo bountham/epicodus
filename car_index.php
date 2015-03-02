@@ -52,6 +52,13 @@ $lexus = new Car("2013 Lexus RX 350", 44700, 20000, "img/lexus_2013.jpg");
 $mercedes = new Car("Mercedes Benz CLS550", 39900, 37979, "img/mercedes_cls550.jpg");
 
 $cars = array($porsche, $ford, $lexus, $mercedes);
+$carsSearchResults = array();
+
+foreach($cars as $car) {
+    if (($car->getPrice() < $_GET['price']) AND ($car->getMileage() < $_GET['mileage'])) {
+        array_push($carsSearchResults, $car);
+    }
+}
 
 ?>
 
@@ -68,7 +75,7 @@ $cars = array($porsche, $ford, $lexus, $mercedes);
             <h1>Car Finder!</h1>
             <div>
                 <?php
-                    foreach($cars as $car) {
+                    foreach($carsSearchResults as $car) {
                         echo "<h2>" . $car->getMakeModel() . "</h2>";
                         echo "<ul class='content'>";
                         echo "<li>$" . $car->getPrice() . "</il>";

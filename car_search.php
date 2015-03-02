@@ -21,7 +21,12 @@
                         <input id="price" name="price" class="form-control"
                         type="number">
                     </div>
-                    <button type="submit" class="btn-success">Let's rock</button>             
+                    <div class="form-group">
+                        <label for="mileage">Maximum mileage:</label>
+                        <input id="mileage" name="mileage" class="form-control"
+                        type="number">
+                    </div>
+                    <button type="submit" class="btn-success">Let's rock</button>
                 </form>
             </div>
         </div>
