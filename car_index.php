@@ -49,13 +49,15 @@ class Car {
 $porsche = new Car("2014 Porsche 911", 114991, 7864, "img/porsche_911.jpg");
 $ford = new Car("2011 Ford F450", 55995, 14241, "img/ford_truck.jpg");
 $lexus = new Car("2013 Lexus RX 350", 44700, 20000, "img/lexus_2013.jpg");
-$mercedes = new Car("Mercedes Benz CLS550", 39900, 37979, "img/mercedes_cls550.jpg");
+$mercedes = new Car("Mercedes Benz CLS550", 39900, 37979,
+"img/mercedes_cls550.jpg");
 
 $cars = array($porsche, $ford, $lexus, $mercedes);
 $carsSearchResults = array();
 
 foreach($cars as $car) {
-    if (($car->getPrice() < $_GET['price']) AND ($car->getMileage() < $_GET['mileage'])) {
+    if (($car->getPrice() < $_GET['price']) AND ($car->getMileage()
+        < $_GET['mileage'])) {
         array_push($carsSearchResults, $car);
     }
 }
@@ -67,7 +69,8 @@ foreach($cars as $car) {
     <head>
         <title>Car Dealership</title>
         <link rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.
+            min.css">
         <link rel="stylesheet" href="css/car_style.css">
     </head>
     <body>
@@ -75,13 +78,18 @@ foreach($cars as $car) {
             <h1>Car Finder!</h1>
             <div>
                 <?php
-                    foreach($carsSearchResults as $car) {
-                        echo "<h2>" . $car->getMakeModel() . "</h2>";
-                        echo "<ul class='content'>";
-                        echo "<li>$" . $car->getPrice() . "</il>";
-                        echo "<li>" . $car->getMileage() . " miles</il>";
-                        echo "</ul>";
-                        echo "<img src='" . $car->getImagePath() . "'>";
+                    if(count($carsSearchResults) == 0) {
+                        echo "No matching results! Please redefine your
+                        search.";
+                    } else {
+                        foreach($carsSearchResults as $car) {
+                            echo "<h2>" . $car->getMakeModel() . "</h2>";
+                            echo "<ul class='content'>";
+                            echo "<li>$" . $car->getPrice() . "</il>";
+                            echo "<li>" . $car->getMileage() . " miles</il>";
+                            echo "</ul>";
+                            echo "<img src='" . $car->getImagePath() . "'>";
+                        }
                     }
                 ?>
             </div>
