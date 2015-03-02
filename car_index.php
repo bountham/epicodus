@@ -60,17 +60,19 @@ $cars = array($porsche, $ford, $lexus, $mercedes);
     <head>
         <title>Car Dealership</title>
         <link rel="stylesheet"
-            href="https://maxcdn.bootstrap.cdn/bootstrap/3.3.1/css/bootstrap.min.css">
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/car_style.css">
     </head>
     <body>
         <div class="container">
-            <div class="col-md-4">
+            <h1>Car Finder!</h1>
+            <div>
                 <?php
                     foreach($cars as $car) {
-                        echo"<li>" . $car->getMakeModel() . "</li>";
-                        echo "<li>" . $car->getPrice() . "</il>";
-                        echo "<li>" . $car->getMileage() . "</il>";
+                        echo "<h2>" . $car->getMakeModel() . "</h2>";
+                        echo "<ul class='content'>";
+                        echo "<li>$" . $car->getPrice() . "</il>";
+                        echo "<li>" . $car->getMileage() . " miles</il>";
                         echo "</ul>";
                         echo "<img src='" . $car->getImagePath() . "'>";
                     }

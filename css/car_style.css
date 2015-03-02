@@ -1,3 +1,13 @@
 img {
 max_width: 200px;
 }
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    border-bottom: lightgrey solid 2px;
+}
+
+.content {
+    max-width: 270px;
+}
