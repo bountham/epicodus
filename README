@@ -1,0 +1,8 @@
+Car Dealership Search Experiment
+
+Version 1.0 2015
+
+Tommy Bountham, Cynthia Wilhelm
+
+CDSE is a PHP-based tool which displays information for vehicles 
+matching price and mileage criteria specified by a user.
